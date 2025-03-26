@@ -1,0 +1,47 @@
+<form [formGroup]="userForms" class="mb-3">
+  <div class="row">
+  <div class="form-group col-md">
+    <label for="nome">Nome</label>
+    <input id="nome" type="text"
+    class="form-control"
+    [class.is-invalid]="userForms.get('nome')?.errors && userForms.get('nome')?.touched"
+    formControlName="nome"/>
+
+    <!--CRIAÇÃO DOS ERROS DO NOME-->
+      <div *ngIf="userForms.get('nome')?.hasError('required')" class="invalid-feedback"> Nome é obrigatório </div>
+      <div *ngIf="userForms.get('nome')?.hasError('maxLength')" class="invalid-feedback"> Máximo: 50 caracteres </div>
+
+  </div>
+
+  <div class="form-group col-md">
+    <label for="nome">Idade</label>
+    <input id="nome" type="number"
+    class="form-control"
+    [class.is-invalid]="userForms.get('idade')?.errors && userForms.get('idade')?.touched"
+    formControlName="idade"/>
+
+    <!--CRIAÇÃO DOS ERROS DA IDADE-->
+      <div *ngIf="userForms.get('idade')?.hasError('required')" class="invalid-feedback"> Idade é obrigatório </div>
+      <div *ngIf="userForms.get('idade')?.hasError('min') || userForms.get('idade')?.hasError('max')" class="invalid-feedback"> Fora da idade permitida </div>
+
+  </div>
+
+  </div>
+  <button [disabled]="!userForms.valid" (click)="EnviarForm()" class="btn btn-success mt-3">Enviar</button>
+</form>
+
+<div class="row">
+<app-user-card
+(userInfoEmitter)="infoUserSelecionado($event)"
+*ngFor="let user of users"
+[user]="user"
+class="col-md-3 mb-3">
+</app-user-card>
+</div>
+
+<!--ESTA ÁREA SÓ SERÁ "CARREGADA" CASO FOR DIFERENTE DE UNDEFINED (SE ALGUM BOTÃO FOR SELECIONADO)-->
+<div *ngIf="userSelecionado" class="mt-3 border col-md p-3">
+  <h2>Usuário Selecionado</h2>
+  <p> Nome: {{userSelecionado.nome}} </p>
+  <p> Idade: {{userSelecionado.idade}} </p>
+</div>
