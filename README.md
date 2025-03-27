@@ -2,7 +2,7 @@
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 17.3.11.
 
-Este README está em inglês pois está com as "definições padrões" do Angular.
+Este arquivo README está em inglês pois está com as "definições padrões" do Angular.
 
 ## Development server
 
