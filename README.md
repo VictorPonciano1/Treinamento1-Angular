@@ -4,6 +4,8 @@ This project was generated with [Angular CLI](https://github.com/angular/angular
 
 Este arquivo README está em inglês pois está com as "definições padrões" do Angular.
 
+Este projeto foi criado com a inteção de treinar o uso do Framework Angular.
+
 ## Development server
 
 Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The application will automatically reload if you change any of the source files.
