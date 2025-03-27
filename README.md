@@ -4,7 +4,7 @@ This project was generated with [Angular CLI](https://github.com/angular/angular
 
 Este arquivo README está em inglês pois está com as "definições padrões" do Angular.
 
-Este projeto foi criado com a inteção de treinar o uso do Framework Angular.
+Este projeto foi criado com a inteção de treinar o uso do Framework Angular, nenhum código é de autoria própria.
 
 ## Development server
 
